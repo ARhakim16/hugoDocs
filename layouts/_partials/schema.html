@@ -4,6 +4,8 @@
   "@type" "Organization"
   "name" .Site.Title
   "url" .Site.BaseURL
+  "telephone" site.Params.contact.phone
+  "address" (dict "@type" "PostalAddress" "streetAddress" site.Params.contact.address)
 -}}
 <script type="application/ld+json">{{ $org | jsonify }}</script>
 

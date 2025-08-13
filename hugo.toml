@@ -122,11 +122,14 @@ ignoreLogs = ['warning-frontmatter-params-overrides']
 [params]
   description = "The world’s fastest framework for building websites"
   ghrepo      = "https://github.com/gohugoio/hugoDocs/"
-      [params.brand]
-      # Ganti dengan path logo Anda (contoh di static/images/logo-ssn.png)
-      logo = "/images/logo-ssn.webp"
-      logo_height = 56
+         [params.brand]
+       # Ganti dengan path logo Anda (contoh di static/images/logo-ssn.png)
+       logo = "/images/logo-ssn.webp"
+       logo_height = 56
        logo_align = "baseline"
+   [params.contact]
+       phone = "+6282188989240"
+       address = "Jalan AR. Hakim I No.16A, Kecamatan Tallo, Kelurahan Ujungpandang Baru, Kota Makassar, Sulawesi Selatan – Indonesia"
   [params.home]
     # Ganti dengan path gambar hero Anda. Bisa assets (diproses) atau static.
     hero_image = "/images/hero-ssn.webp"
