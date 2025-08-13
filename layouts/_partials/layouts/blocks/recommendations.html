@@ -1,0 +1,28 @@
+{{/*
+  Rekomendasi konten sederhana: tampilkan hingga 4 konten terkait berdasarkan kategori atau tag yang sama.
+  Dipakai di bawah artikel/produk.
+*/}}
+{{ $current := . }}
+{{ $byTax := slice "categories" "tags" }}
+{{ $related := slice }}
+{{ range $byTax }}
+  {{ with $current.Params . }}
+    {{ range . }}
+      {{ $related = $related | append (where site.RegularPages $.Section "intersect" (slice .)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $related = uniq $related | where "RelPermalink" "ne" $current.RelPermalink | first 4 }}
+{{ if gt (len $related) 0 }}
+  <div class="mt-10">
+    <h3 class="text-xl font-semibold text-gray-900">Rekomendasi untuk Anda</h3>
+    <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {{ range $related }}
+        <li class="rounded-lg border border-gray-200 p-4 hover:bg-gray-50">
+          <a href="{{ .RelPermalink }}" class="font-medium text-gray-900 hover:text-green-700">{{ .LinkTitle }}</a>
+          <div class="text-sm text-gray-600 mt-1">{{ .Summary | plainify | truncate 120 }}</div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
