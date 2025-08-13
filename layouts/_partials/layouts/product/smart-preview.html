@@ -1,0 +1,35 @@
+{{ $p := . }}
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+  <div class="space-y-4">
+    {{ with $p.Resources.GetMatch "featured*" }}
+      <img class="w-full rounded-lg border border-gray-200" src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+    {{ end }}
+    {{ with $p.Params.preview.video }}
+      <div class="aspect-video rounded-lg overflow-hidden border border-gray-200">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ . }}" title="Preview Video" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    {{ end }}
+    {{ with $p.Params.preview.reels }}
+      <div class="aspect-video rounded-lg overflow-hidden border border-gray-200">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ . }}" title="Reels/TikTok" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    {{ end }}
+  </div>
+  <div>
+    <h1 class="text-3xl font-extrabold text-gray-900">{{ $p.Title }}</h1>
+    {{ with $p.Params.subtitle }}<p class="text-gray-700 mt-1">{{ . }}</p>{{ end }}
+    <div class="prose prose-slate mt-4">{{ $p.Summary }}</div>
+    <div class="mt-6 flex items-center gap-3">
+      {{ with $p.Params.price }}<div class="text-2xl font-extrabold text-green-700">{{ partial "helpers/funcs/format-idr.html" . }}</div>{{ else }}<div class="text-sm text-red-600">Harga belum tersedia</div>{{ end }}
+      {{ with $p.Params.sku }}<div class="text-sm text-gray-500">SKU: {{ . }}</div>{{ end }}
+      <a href="https://wa.me/6281234567890" class="inline-flex items-center rounded-md bg-green-600 hover:bg-green-500 text-white font-semibold px-5 py-3">Chat/Beli via WhatsApp</a>
+      <button class="inline-flex items-center rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-3" x-data x-on:click="$store.cart.add({id: '{{ $p.File.BaseFileName }}', name: '{{ $p.Title }}', qty: 1}); window.location.href='/cart/'">Tambah ke Keranjang</button>
+    </div>
+    {{ with $p.Params.preview.sample }}
+      <div class="mt-8">
+        <h2 class="text-xl font-semibold text-gray-900">Cuplikan/Contoh</h2>
+        <div class="prose prose-slate mt-2">{{ . | markdownify }}</div>
+      </div>
+    {{ end }}
+  </div>
+</div>

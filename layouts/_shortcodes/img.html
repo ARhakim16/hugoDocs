@@ -319,7 +319,13 @@ When using the padding filter, provide all arguments in this order:
 {{- /* Apply filter. */}}
 {{- $fi := $i }}
 {{- with $f }}
-  {{- $fi = $i.Filter . }}
+  {{- with try ($i.Filter .) }}
+    {{- with .Err }}
+      {{- $fi = $i }}
+    {{- else }}
+      {{- $fi = .Value }}
+    {{- end }}
+  {{- end }}
 {{- end }}
 
 {{- /* Render. */}}

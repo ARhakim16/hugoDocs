@@ -1,0 +1,37 @@
+{{- $ctx := . -}}
+{{- $org := dict
+  "@context" "https://schema.org"
+  "@type" "Organization"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+-}}
+<script type="application/ld+json">{{ $org | jsonify }}</script>
+
+{{- if or $ctx.IsPage $ctx.IsHome -}}
+  {{- if eq $ctx.Section "artikel" -}}
+    {{- $article := dict
+      "@context" "https://schema.org"
+      "@type" "Article"
+      "headline" $ctx.Title
+      "datePublished" (or $ctx.PublishDate $ctx.Date)
+      "dateModified" $ctx.Lastmod
+      "author" (slice (dict "@type" "Organization" "name" .Site.Title))
+      "publisher" (dict "@type" "Organization" "name" .Site.Title)
+      "mainEntityOfPage" (dict "@type" "WebPage" "@id" $ctx.Permalink)
+    -}}
+    <script type="application/ld+json">{{ $article | jsonify }}</script>
+  {{- end -}}
+
+  {{- if eq $ctx.Section "produk" -}}
+    {{- $product := dict
+      "@context" "https://schema.org"
+      "@type" "Product"
+      "name" $ctx.Title
+      "description" (or $ctx.Params.description $ctx.Summary)
+      "url" $ctx.Permalink
+      "brand" (dict "@type" "Organization" "name" .Site.Title)
+      "offers" (dict "@type" "Offer" "priceCurrency" (or $ctx.Params.currency "IDR") "price" $ctx.Params.price "sku" $ctx.Params.sku "availability" "https://schema.org/InStock" "url" $ctx.Permalink)
+    -}}
+    <script type="application/ld+json">{{ $product | jsonify }}</script>
+  {{- end -}}
+{{- end -}}
