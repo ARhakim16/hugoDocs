@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  width="1200"
+  height="600"
+  viewBox="0 0 1200 600"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc">
+
+  <title>SSN Hero</title>
+  <desc>Hidup Sehat dan Sejahtera untuk Seluruh Keluarga</desc>
+
+  <!-- Foto (ganti ekstensi jika bukan .webp) -->
+  <image
+    href="/images/hero-src.webp"
+    x="0" y="0"
+    width="1200" height="600"
+    preserveAspectRatio="xMidYMid slice" />
+
+  <!-- Overlay gelap di kiri agar teks terbaca -->
+  <defs>
+    <linearGradient id="overlayLeft" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0c4f1e" stop-opacity="0.05" />
+      <stop offset="0.55" stop-color="#0c4f1e" stop-opacity="0.30" />
+      <stop offset="0.80" stop-color="#0c4f1e" stop-opacity="0.70" />
+      <stop offset="1"    stop-color="#0c4f1e" stop-opacity="0.90" />
+    </linearGradient>
+
+    <!-- Opsional: bayangan halus pada teks -->
+    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#overlayLeft)" />
+
+  <!-- Teks di kiri -->
+  <g transform="translate(60,140)" filter="url(#textShadow)">
+    <text
+      fill="#ffffff"
+      font-family="Inter, Poppins, Segoe UI, Arial, sans-serif"
+      font-size="64"
+      font-weight="800"
+      style="line-height:1.2">
+      <tspan x="0" dy="0">Hidup Sehat dan</tspan>
+      <tspan x="0" dy="72">Sejahtera untuk</tspan>
+      <tspan x="0" dy="72">Seluruh Keluarga</tspan>
+    </text>
+  </g>
+</svg>
