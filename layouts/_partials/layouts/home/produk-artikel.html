@@ -22,7 +22,7 @@
     <div>
       <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Artikel Terbaru</h2>
       <ul class="mt-6 space-y-4">
-        {{ range first 4 (where site.RegularPages "Section" "news") }}
+        {{ range first 4 (where site.RegularPages "Section" "artikel") }}
           <li class="flex items-start gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-green-600 flex-none" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14H8a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2Zm3-4H8a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-4H8a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Z"/></svg>
             <a href="{{ .RelPermalink }}" class="font-medium text-gray-900 hover:text-green-700">{{ .LinkTitle }}</a>
