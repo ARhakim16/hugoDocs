@@ -1,0 +1,25 @@
+<section class="py-10 sm:py-12">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Video Terbaru</h2>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {{ with site.Data.social.youtube.items }}
+        <div class="space-y-4">
+          {{ range first 2 . }}
+            <div class="aspect-video rounded-lg overflow-hidden border border-gray-200">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ .id }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+      {{ with site.Data.social.tiktok.items }}
+        <div class="space-y-4">
+          {{ range first 2 . }}
+            <div class="aspect-video rounded-lg overflow-hidden border border-gray-200">
+              <iframe class="w-full h-full" src="{{ .embed }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
