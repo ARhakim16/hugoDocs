@@ -8,7 +8,9 @@ Silakan hubungi kami untuk pertanyaan produk, kerja sama, atau dukungan reseller
 
 - WhatsApp: [Klik untuk chat](https://wa.me/6282188989240)
 - Telepon: [0821 8898 9240](tel:+6282188989240)
-- Alamat: Jalan AR. Hakim I No.16A, Kecamatan Tallo, Kelurahan Ujungpandang Baru, Kota Makassar, Sulawesi Selatan – Indonesia. [Lihat di peta](https://www.google.com/maps/search/?api=1&query=Jalan%20AR.%20Hakim%20I%20No.16A%20Kecamatan%20Tallo%20Kelurahan%20Ujungpandang%20Baru%20Kota%20Makassar%20Sulawesi%20Selatan)
+- Alamat: Jalan AR. Hakim I No.16A, Kecamatan Tallo, Kelurahan Ujungpandang Baru, Kota Makassar, Sulawesi Selatan – Indonesia. [Lihat di peta](https://www.google.com/maps?q=-5.129,119.438&z=16)
+
+<iframe src="https://www.google.com/maps?q=-5.129,119.438&z=16&output=embed" width="100%" height="320" style="border:0" allowfullscreen loading="lazy"></iframe>
 
 Atau kirim pesan melalui formulir berikut (dibalas via email/WhatsApp):
 

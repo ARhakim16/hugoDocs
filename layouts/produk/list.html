@@ -37,7 +37,11 @@
         <li x-show="(()=>{const b='{{ or .Params.brand "" }}';const raw='{{ with .Params.categories }}{{ delimit . "|" }}{{ else }}{{ with .Params.tags }}{{ delimit . "|" }}{{ else }}{{ "" }}{{ end }}{{ end }}';const cs=raw.split('|').filter(Boolean);const name='{{ .Title }}'.toLowerCase();return (brand===''||brand===b)&&(cat===''||cs.includes(cat))&&(q===''||name.includes(q.toLowerCase()));})()" class="rounded-xl border border-gray-200 p-5 hover:bg-gray-50" x-cloak>
           <a class="font-semibold text-gray-900 hover:text-green-700" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
           <p class="text-sm text-gray-600 mt-1">{{ .Summary | plainify | truncate 120 }}</p>
-          <div class="mt-2 text-xs text-gray-500">{{ with .Params.brand }}Brand: {{ . }}{{ end }}</div>
+          <div class="mt-2 flex items-center gap-2">
+            {{ with .Params.badge }}<span class="text-[11px] rounded bg-green-600 text-white px-2 py-0.5">{{ . }}</span>{{ end }}
+            {{ with .Params.brand }}<span class="text-xs text-gray-500">Brand: {{ . }}</span>{{ end }}
+            <a href="https://wa.me/6281234567890?text={{ urlquery (printf "Halo, saya ingin tanya harga %s" .Title) }}" class="ml-auto text-xs rounded bg-green-600 text-white px-2 py-1">Tanya via WA</a>
+          </div>
         </li>
       {{ end }}
     </ul>
