@@ -20,7 +20,7 @@
     {{ with $p.Params.subtitle }}<p class="text-gray-700 mt-1">{{ . }}</p>{{ end }}
     <div class="prose prose-slate mt-4">{{ $p.Summary }}</div>
     <div class="mt-6 flex items-center gap-3">
-      {{ with $p.Params.price }}<div class="text-2xl font-extrabold text-green-700">Rp {{ lang.FormatNumber 0 . }}</div>{{ end }}
+      {{ with $p.Params.price }}<div class="text-2xl font-extrabold text-green-700">{{ partial "helpers/funcs/format-idr.html" . }}</div>{{ else }}<div class="text-sm text-red-600">Harga belum tersedia</div>{{ end }}
       {{ with $p.Params.sku }}<div class="text-sm text-gray-500">SKU: {{ . }}</div>{{ end }}
       <a href="https://wa.me/6281234567890" class="inline-flex items-center rounded-md bg-green-600 hover:bg-green-500 text-white font-semibold px-5 py-3">Chat/Beli via WhatsApp</a>
       <button class="inline-flex items-center rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-3" x-data x-on:click="$store.cart.add({id: '{{ $p.File.BaseFileName }}', name: '{{ $p.Title }}', qty: 1}); window.location.href='/cart/'">Tambah ke Keranjang</button>

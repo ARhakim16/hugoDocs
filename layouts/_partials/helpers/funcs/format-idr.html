@@ -1,0 +1,4 @@
+{{/* Format angka menjadi Rupiah IDR, contoh: 149000 -> Rp 149.000 */}}
+{{- $n := . | int -}}
+{{- $s := lang.FormatNumber 0 $n -}}
+Rp {{ $s }}
