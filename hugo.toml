@@ -181,17 +181,27 @@ ignoreLogs = ['warning-frontmatter-params-overrides']
     url        = '/tentang-kami/'
     weight     = 5
   [[menus.global]]
-    identifier = 'layanan'
-    name       = 'Layanan'
-    url        = '/layanan/'
+    identifier = 'katalog'
+    name       = 'Katalog Produk'
+    url        = '/produk/'
     weight     = 10
   [[menus.global]]
-    identifier = 'produk'
-    name       = 'Produk'
-    url        = '/produk/'
+    identifier = 'video'
+    name       = 'Video'
+    url        = '/#video'
     weight     = 15
   [[menus.global]]
     identifier = 'artikel'
     name       = 'Artikel'
     url        = '/artikel/'
     weight     = 20
+  [[menus.global]]
+    identifier = 'jaringan'
+    name       = 'Jaringan'
+    url        = '/jaringan/'
+    weight     = 25
+  [[menus.global]]
+    identifier = 'kontak'
+    name       = 'Hubungi Kami'
+    url        = '/hubungi-kami/'
+    weight     = 30
