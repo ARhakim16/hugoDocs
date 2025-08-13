@@ -30,7 +30,7 @@
       "description" (or $ctx.Params.description $ctx.Summary)
       "url" $ctx.Permalink
       "brand" (dict "@type" "Organization" "name" .Site.Title)
-      "offers" (dict "@type" "Offer" "priceCurrency" "IDR" "availability" "https://schema.org/InStock" "url" $ctx.Permalink)
+      "offers" (dict "@type" "Offer" "priceCurrency" (or $ctx.Params.currency "IDR") "price" $ctx.Params.price "sku" $ctx.Params.sku "availability" "https://schema.org/InStock" "url" $ctx.Permalink)
     -}}
     <script type="application/ld+json">{{ $product | jsonify }}</script>
   {{- end -}}
