@@ -13,9 +13,10 @@
           ><br>
         </div>
 
+        {{ $logo := or site.Params.brand.logo "/images/logo-ssn.webp" }}
         <img
-          src="/images/hugo-logo-wide.svg"
-          alt="Hugo Logo"
+          src="{{ $logo | relURL }}"
+          alt="Logo SSN"
           class="aspect-3/1 w-40">
 
         <ul class="space-y-2 text-gray-200">
