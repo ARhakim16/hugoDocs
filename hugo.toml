@@ -74,6 +74,8 @@ ignoreLogs = ['warning-frontmatter-params-overrides']
       autoDefinitionTermID = true
       [markup.goldmark.parser.attribute]
         block = true
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     lineNumbersInTable = false
     noClasses          = false
