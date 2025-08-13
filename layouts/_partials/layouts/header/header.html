@@ -8,7 +8,7 @@
           class="flex items-center gap-3 text-white text-xl font-bold upper"
           href="{{ .RelPermalink }}"
           aria-label="{{ .LinkTitle }}">
-          {{ with site.Params.brand.logo }}<img src="{{ . | relURL }}" alt="Logo" style="height:32px;width:auto;" />{{ end }}
+          {{ with site.Params.brand.logo }}<img src="{{ . | relURL }}" alt="Logo" style="height:{{ or site.Params.brand.logo_height 48 }}px;width:auto;" />{{ end }}
           <span>{{ site.Title }}</span>
         </a>
       {{ end }}
