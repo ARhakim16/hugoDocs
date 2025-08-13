@@ -124,10 +124,10 @@ ignoreLogs = ['warning-frontmatter-params-overrides']
   ghrepo      = "https://github.com/gohugoio/hugoDocs/"
   [params.brand]
     # Ganti dengan path logo Anda (contoh di static/images/logo-ssn.png)
-    logo = "/images/logo-ssn.png"
+    logo = "/images/logo-ssn.webp"
   [params.home]
     # Ganti dengan path gambar hero Anda. Bisa assets (diproses) atau static.
-    hero_image = "/images/hero-ssn.jpg"
+    hero_image = "/images/hero-ssn.webp"
     hero_title = "Hidup Sehat dan Sejahtera untuk Seluruh Keluarga"
     hero_cta_text = "Cek Produk Kami"
     hero_cta_link = "/produk/"
