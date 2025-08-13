@@ -1,19 +1,25 @@
 <section class="relative isolate w-full">
-  {{ $bg := or (resources.Get "images/health-hero.jpg") (resources.Get "images/hugo-github-screenshot.png") }}
-  {{ if $bg }}
-    {{ $bgLarge := $bg.Fit "1600x900" }}
-    <div class="relative w-full h-[420px] sm:h-[520px] bg-center bg-cover flex items-center" style="background-image:url('{{ $bgLarge.RelPermalink }}')">
+  {{ $custom := site.Params.home.hero_image }}
+  {{ $bg := cond (strings.HasPrefix $custom "/") nil (resources.Get $custom) }}
+  {{ if and (not $bg) $custom }}
+    <div class="relative w-full h-[420px] sm:h-[520px] bg-center bg-cover flex items-center" style="background-image:url('{{ $custom | relURL }}')">
   {{ else }}
-    <div class="relative w-full h-[420px] sm:h-[520px] bg-green-900 flex items-center">
+    {{ $fallback := or (resources.Get "images/health-hero.jpg") (resources.Get "images/hugo-github-screenshot.png") }}
+    {{ with or $bg $fallback }}
+      {{ $bgLarge := .Fit "1600x900" }}
+      <div class="relative w-full h-[420px] sm:h-[520px] bg-center bg-cover flex items-center" style="background-image:url('{{ $bgLarge.RelPermalink }}')">
+    {{ else }}
+      <div class="relative w-full h-[420px] sm:h-[520px] bg-green-900 flex items-center">
+    {{ end }}
   {{ end }}
       <div class="absolute inset-0 bg-black/30"></div>
       <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div class="max-w-2xl">
           <h1 class="text-white text-4xl sm:text-5xl font-extrabold leading-tight">
-            Hidup Sehat dan Sejahtera untuk Seluruh Keluarga
+            {{ or site.Params.home.hero_title "Hidup Sehat dan Sejahtera untuk Seluruh Keluarga" }}
           </h1>
           <div class="mt-6">
-            <a href="/produk/" class="inline-flex items-center rounded-md bg-green-600 hover:bg-green-500 text-white font-semibold px-5 py-3">Cek Produk Kami</a>
+            <a href="{{ or site.Params.home.hero_cta_link "/produk/" }}" class="inline-flex items-center rounded-md bg-green-600 hover:bg-green-500 text-white font-semibold px-5 py-3">{{ or site.Params.home.hero_cta_text "Cek Produk Kami" }}</a>
           </div>
         </div>
       </div>

@@ -122,6 +122,15 @@ ignoreLogs = ['warning-frontmatter-params-overrides']
 [params]
   description = "The world’s fastest framework for building websites"
   ghrepo      = "https://github.com/gohugoio/hugoDocs/"
+  [params.brand]
+    # Ganti dengan path logo Anda (contoh di static/images/logo-ssn.png)
+    logo = "/images/logo-ssn.png"
+  [params.home]
+    # Ganti dengan path gambar hero Anda. Bisa assets (diproses) atau static.
+    hero_image = "/images/hero-ssn.jpg"
+    hero_title = "Hidup Sehat dan Sejahtera untuk Seluruh Keluarga"
+    hero_cta_text = "Cek Produk Kami"
+    hero_cta_link = "/produk/"
   [params.render_hooks.link]
     errorLevel = 'warning' # ignore (default), warning, or error (fails the build)
   [params.social.mastodon]
