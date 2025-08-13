@@ -3,16 +3,19 @@
   Dipakai di bawah artikel/produk.
 */}}
 {{ $current := . }}
-{{ $byTax := slice "categories" "tags" }}
+{{ $taxonomies := slice "categories" "tags" }}
 {{ $related := slice }}
-{{ range $byTax }}
-  {{ with $current.Params . }}
-    {{ range . }}
-      {{ $related = $related | append (where site.RegularPages $.Section "intersect" (slice .)) }}
+{{ range $tax := $taxonomies }}
+  {{ $vals := index $current.Params $tax }}
+  {{ with $vals }}
+    {{ $key := printf "Params.%s" $tax }}
+    {{ range $v := . }}
+      {{ $matches := where site.RegularPages $key "intersect" (slice $v) }}
+      {{ $related = $related | union $matches }}
     {{ end }}
   {{ end }}
 {{ end }}
-{{ $related = uniq $related | where "RelPermalink" "ne" $current.RelPermalink | first 4 }}
+{{ $related = where $related "RelPermalink" "ne" $current.RelPermalink | first 4 }}
 {{ if gt (len $related) 0 }}
   <div class="mt-10">
     <h3 class="text-xl font-semibold text-gray-900">Rekomendasi untuk Anda</h3>

@@ -41,9 +41,13 @@
     </div>
   </div>
 
-  <div class="-my-5 pl-2 grow-0">
+  <div class="-my-5 pl-2 grow-0 flex items-center gap-3">
     {{/* Search. */}}
     {{ partial "layouts/search/input.html" . }}
+    <a href="/cart/" class="relative inline-flex items-center text-white font-semibold">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-white"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.45A1 1 0 0 0 9.8 18h8.7v-2h-7.42l.93-1.68h5.49a1 1 0 0 0 .9-.55l3.58-6.49A1 1 0 0 0 21.7 5H7.21L6.27 3.59A1 1 0 0 0 5.42 3H2v2h2.4l3.2 6.4L5.5 15.5c-.66 1.16.17 2.5 1.5 2.5H20v-2H9.42l.9-1.6H19a1 1 0 0 0 .9-.55L23 6H7Z"/></svg>
+      <span x-data x-init="$watch('$store.cart.items',()=>{})" class="ml-1 text-sm" x-text="$store.cart ? $store.cart.count() : 0">0</span>
+    </a>
   </div>
   <div
     class="relative ml-0 md:ml-8 flex content-center basis-0 justify-end gap-0 sm:gap-1 xl:grow-1">
