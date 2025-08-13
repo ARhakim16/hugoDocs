@@ -60,8 +60,9 @@ export const handler: Handler = async (event) => {
     const body = JSON.parse(event.body || '{}');
     // Expected body: { source: "youtube" | "tiktok", items: [...], updated?: ISO8601 }
     const source = String(body.source || '').toLowerCase();
-    if (!['youtube', 'tiktok'].includes(source)) {
-      return json(400, { error: 'Invalid source. Use "youtube" or "tiktok".' });
+    const allowed = ['youtube','tiktok','facebook','instagram','telegram','twitter','linkedin','whatsapp'];
+    if (!allowed.includes(source)) {
+      return json(400, { error: `Invalid source. Use one of: ${allowed.join(', ')}` });
     }
     const items = Array.isArray(body.items) ? body.items : [];
     if (!items.length) {

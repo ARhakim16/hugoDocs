@@ -1,6 +1,6 @@
 <section class="py-10 sm:py-12">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Video Terbaru</h2>
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Konten Terbaru</h2>
     <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
       {{ with site.Data.social.youtube.items }}
         <div class="space-y-4">
@@ -18,6 +18,56 @@
               <iframe class="w-full h-full" src="{{ .embed }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
             </div>
           {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+      {{ with site.Data.social.facebook.items }}
+        <div>
+          <h3 class="font-semibold text-gray-900">Facebook</h3>
+          <ul class="list-disc ml-5">
+            {{ range first 3 . }}<li><a class="text-green-700" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ with site.Data.social.instagram.items }}
+        <div>
+          <h3 class="font-semibold text-gray-900">Instagram</h3>
+          <ul class="list-disc ml-5">
+            {{ range first 3 . }}<li><a class="text-green-700" href="{{ .embed }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ with site.Data.social.twitter.items }}
+        <div>
+          <h3 class="font-semibold text-gray-900">Twitter/X</h3>
+          <ul class="list-disc ml-5">
+            {{ range first 3 . }}<li><a class="text-green-700" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ with site.Data.social.linkedin.items }}
+        <div>
+          <h3 class="font-semibold text-gray-900">LinkedIn</h3>
+          <ul class="list-disc ml-5">
+            {{ range first 3 . }}<li><a class="text-green-700" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ with site.Data.social.telegram.items }}
+        <div>
+          <h3 class="font-semibold text-gray-900">Telegram</h3>
+          <ul class="list-disc ml-5">
+            {{ range first 3 . }}<li><a class="text-green-700" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}
+          </ul>
+        </div>
+      {{ end }}
+      {{ with site.Data.social.whatsapp.items }}
+        <div>
+          <h3 class="font-semibold text-gray-900">WhatsApp</h3>
+          <ul class="list-disc ml-5">
+            {{ range first 3 . }}<li><a class="text-green-700" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>{{ end }}
+          </ul>
         </div>
       {{ end }}
     </div>
