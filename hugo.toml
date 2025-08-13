@@ -125,7 +125,8 @@ ignoreLogs = ['warning-frontmatter-params-overrides']
       [params.brand]
       # Ganti dengan path logo Anda (contoh di static/images/logo-ssn.png)
       logo = "/images/logo-ssn.webp"
-      logo_height = 48
+      logo_height = 56
+       logo_align = "baseline"
   [params.home]
     # Ganti dengan path gambar hero Anda. Bisa assets (diproses) atau static.
     hero_image = "/images/hero-ssn.webp"
