@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<title>Laporan Perubahan Situs Sehat Sejahtera Nusantara</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body { font-family: Mulish, Arial, sans-serif; margin: 32px; color: #111; }
+  h1, h2 { color: #0a7b45; }
+  a { color: #0a7b45; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+  .muted { color: #6b7280; }
+  @media print { a { color: #000; text-decoration: none; } }
+</style>
+</head>
+<body>
+  <h1>Laporan Perubahan</h1>
+  <p class="muted">Situs: <a href="https://sehatsejahteranusantara.netlify.app/">sehatsejahteranusantara.netlify.app</a></p>
+  <h2>Ringkasan</h2>
+  <ul>
+    <li>Beranda bergaya majalah dengan section: Hero, Misi, Layanan, Etalase Produk, Artikel Terbaru, Feed Video (YouTube/TikTok), CTA Afiliasi.</li>
+    <li>Halaman Produk interaktif: preview video, harga (IDR), SKU, tombol WhatsApp/keranjang, rekomendasi terkait.</li>
+    <li>Etalase Toko otomatis dari section <code>produk</code>.</li>
+    <li>Keranjang belanja (client-side) dengan penyimpanan lokal.</li>
+    <li>Program Afiliasi: formulir Netlify Forms.</li>
+    <li>SEO JSON-LD: Organization, Article, Product+Offer (price/sku).</li>
+    <li>Webhook Netlify Function untuk update feed sosial dari n8n.</li>
+  </ul>
+
+  <h2>Tautan Demo</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Beranda</h3>
+      <p><a href="https://sehatsejahteranusantara.netlify.app/">/</a></p>
+    </div>
+    <div class="card">
+      <h3>Etalase Toko</h3>
+      <p><a href="https://sehatsejahteranusantara.netlify.app/produk/">/produk/</a></p>
+    </div>
+    <div class="card">
+      <h3>Produk: Aliran Darah</h3>
+      <p><a href="https://sehatsejahteranusantara.netlify.app/produk/cara-melancarkan-aliran-darah/">/produk/cara-melancarkan-aliran-darah/</a></p>
+    </div>
+    <div class="card">
+      <h3>Keranjang</h3>
+      <p><a href="https://sehatsejahteranusantara.netlify.app/cart/">/cart/</a></p>
+    </div>
+    <div class="card">
+      <h3>Afiliasi</h3>
+      <p><a href="https://sehatsejahteranusantara.netlify.app/affiliates/">/affiliates/</a></p>
+    </div>
+    <div class="card">
+      <h3>Webhook Feed</h3>
+      <p><code>.netlify/functions/update-feed</code></p>
+    </div>
+  </div>
+
+  <h2>Petunjuk Cetak ke PDF</h2>
+  <ol>
+    <li>Buka URL: <a href="https://sehatsejahteranusantara.netlify.app/shared/report-changes.html">/shared/report-changes.html</a></li>
+    <li>Di browser, tekan Ctrl/Cmd+P, pilih "Save as PDF".</li>
+    <li>Opsi: aktifkan background graphics untuk hasil terbaik.</li>
+  </ol>
+
+  <p class="muted">Dihasilkan otomatis oleh asisten.</p>
+</body>
+</html>
