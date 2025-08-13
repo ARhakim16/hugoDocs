@@ -1,0 +1,53 @@
+{{ define "main" }}
+  {{ $all := where site.RegularPages "Section" "produk" }}
+  {{ $brands := slice }}
+  {{ $cats := slice }}
+  {{ range $all }}
+    {{ with .Params.brand }}{{ $brands = $brands | append . }}{{ end }}
+    {{ with .Params.categories }}{{ range . }}{{ $cats = $cats | append . }}{{ end }}{{ end }}
+    {{ with .Params.tags }}{{ range . }}{{ $cats = $cats | append . }}{{ end }}{{ end }}
+  {{ end }}
+  {{ $brands = $brands | uniq | sort }}
+  {{ $cats = $cats | uniq | sort }}
+  {{ $p := .Paginate $all 12 }}
+
+  <div x-data="{brand:'', cat:'', q:''}">
+    <h1 class="text-3xl font-extrabold text-gray-900">Katalog Produk</h1>
+
+    <div class="mt-4 flex flex-wrap gap-3 items-center">
+      <input x-model="q" type="search" placeholder="Cari produk..." class="border border-gray-300 rounded-md px-3 py-2" />
+      <div class="flex items-center gap-2">
+        <span class="text-sm text-gray-600">Brand:</span>
+        <button @click="brand=''" :class="brand===''?'bg-green-600 text-white':'bg-gray-100'" class="px-3 py-1 rounded">Semua</button>
+        {{ range $brands }}
+          <button @click="brand='{{ . }}'" :class="brand==='{{ . }}'?'bg-green-600 text-white':'bg-gray-100'" class="px-3 py-1 rounded">{{ . }}</button>
+        {{ end }}
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-sm text-gray-600">Kategori:</span>
+        <button @click="cat=''" :class="cat===''?'bg-green-600 text-white':'bg-gray-100'" class="px-3 py-1 rounded">Semua</button>
+        {{ range $cats }}
+          <button @click="cat='{{ . }}'" :class="cat==='{{ . }}'?'bg-green-600 text-white':'bg-gray-100'" class="px-3 py-1 rounded">{{ . }}</button>
+        {{ end }}
+      </div>
+    </div>
+
+    <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range $p.Pages }}
+        <li x-show="(()=>{const b='{{ or .Params.brand "" }}';const raw='{{ with .Params.categories }}{{ delimit . "|" }}{{ else }}{{ with .Params.tags }}{{ delimit . "|" }}{{ else }}{{ "" }}{{ end }}{{ end }}';const cs=raw.split('|').filter(Boolean);const name='{{ .Title }}'.toLowerCase();return (brand===''||brand===b)&&(cat===''||cs.includes(cat))&&(q===''||name.includes(q.toLowerCase()));})()" class="rounded-xl border border-gray-200 p-5 hover:bg-gray-50" x-cloak>
+          <a class="font-semibold text-gray-900 hover:text-green-700" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          <p class="text-sm text-gray-600 mt-1">{{ .Summary | plainify | truncate 120 }}</p>
+          <div class="mt-2 text-xs text-gray-500">{{ with .Params.brand }}Brand: {{ . }}{{ end }}</div>
+        </li>
+      {{ end }}
+    </ul>
+
+    {{ if gt $p.TotalPages 1 }}
+      <nav class="mt-6 flex items-center gap-2">
+        {{ with $p.Prev }}<a class="px-3 py-1 rounded bg-gray-100" href="{{ .URL }}">‹ Prev</a>{{ end }}
+        <span class="text-sm text-gray-600">Hal {{ $p.PageNumber }} dari {{ $p.TotalPages }}</span>
+        {{ with $p.Next }}<a class="px-3 py-1 rounded bg-gray-100" href="{{ .URL }}">Next ›</a>{{ end }}
+      </nav>
+    {{ end }}
+  </div>
+{{ end }}
