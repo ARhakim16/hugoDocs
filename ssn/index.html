@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSN — Belanja sehat, jaringan adil, edukasi jujur</title>
+  <meta name="description" content="Sehat Sejahtera Nusantara menghubungkan produk berkualitas, jaringan mitra adil, dan konten edukatif untuk hidup lebih sehat.">
+  <style>
+    :root{
+      --green-50:#F0FDF4; --green-100:#DCFCE7; --green-500:#22C55E; --green-600:#16A34A;
+      --text-900:#111827; --text-600:#475569; --border:#E2E8F0; --white:#FFFFFF;
+      --radius:12px; --gap:16px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; color:var(--text-900); background:#fff; line-height:1.6}
+    a{color:var(--green-600); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+
+    /* Grid 12 kolom */
+    .grid-12{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:var(--gap)}
+    /* Desktop default spans */
+    .col-span-1{grid-column:span 1}.col-span-2{grid-column:span 2}.col-span-3{grid-column:span 3}.col-span-4{grid-column:span 4}.col-span-5{grid-column:span 5}.col-span-6{grid-column:span 6}.col-span-7{grid-column:span 7}.col-span-8{grid-column:span 8}.col-span-9{grid-column:span 9}.col-span-10{grid-column:span 10}.col-span-11{grid-column:span 11}.col-span-12{grid-column:span 12}
+    /* Tablet override */
+    @media (max-width: 900px){
+      .t-col-span-1{grid-column:span 1}.t-col-span-2{grid-column:span 2}.t-col-span-3{grid-column:span 3}.t-col-span-4{grid-column:span 4}.t-col-span-5{grid-column:span 5}.t-col-span-6{grid-column:span 6}.t-col-span-12{grid-column:span 12}
+    }
+    /* Mobile override */
+    @media (max-width: 560px){
+      .m-col-span-12{grid-column:span 12}
+    }
+
+    /* Header */
+    header{position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--border)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand-badge{width:36px; height:36px; border-radius:8px; background:var(--green-600); display:grid; place-items:center; color:#fff; font-weight:800}
+    .menu{display:flex; gap:16px; flex-wrap:wrap}
+    .menu a{color:var(--text-900)}
+    .btn{display:inline-block; padding:12px 18px; border-radius:10px; border:1px solid transparent; font-weight:700}
+    .btn-primary{background:var(--green-600); color:#fff; border-color:var(--green-600)}
+    .btn-primary:hover{background:#15803D}
+    .btn-outline{background:#fff; color:var(--green-600); border-color:var(--green-500)}
+
+    /* Section spacing */
+    .section{padding:52px 0}
+    @media (max-width:900px){.section{padding:40px 0}}
+    @media (max-width:560px){.section{padding:32px 0}}
+
+    /* Hero */
+    .hero{background:var(--green-50)}
+    .hero h1{font-size:38px; line-height:1.2; margin:0 0 12px}
+    @media (max-width:900px){.hero h1{font-size:34px}}
+    @media (max-width:560px){.hero h1{font-size:30px}}
+    .hero p{color:var(--text-600); margin:0 0 18px}
+    .hero-ctas{display:flex; gap:12px; flex-wrap:wrap}
+    .hero-img{background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px}
+    .hero-img img{width:100%; height:auto; border-radius:10px; display:block}
+    .badges{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
+    .badge{background:var(--green-100); color:#166534; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700}
+
+    /* Cards */
+    .card{background:#fff; border:1px solid var(--border); border-radius:12px; padding:18px}
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--text-600)}
+    .card .icon{font-size:22px}
+
+    /* Produk */
+    .product img{width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border)}
+    .price{color:var(--green-600); font-weight:800}
+    .actions{display:flex; gap:8px; margin-top:8px; flex-wrap:wrap}
+
+    /* Steps */
+    .step-num{width:28px; height:28px; border-radius:999px; background:var(--green-100); color:#166534; display:grid; place-items:center; font-weight:800}
+
+    /* Edukasi */
+    .post img{width:100%; height:140px; object-fit:cover; border-radius:10px; border:1px solid var(--border)}
+    .meta{font-size:12px; color:var(--text-600)}
+
+    /* Testimoni */
+    blockquote{margin:0}
+    blockquote p{margin:0 0 8px}
+
+    /* Cara order */
+    .howto{background:#fff; border:1px dashed var(--border); border-radius:12px; padding:16px}
+
+    /* Sponsor */
+    .sponsors{background:var(--green-50); border-top:1px solid var(--border)}
+    .logo-box{background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px; display:grid; place-items:center}
+    .logo-box img{max-width:100%; max-height:36px; height:auto; object-fit:contain}
+    .subtle{color:var(--text-600); font-size:13px}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border); padding:24px 0; background:#fff}
+    .footgrid a{color:var(--text-900)}
+    .copy{margin-top:14px; font-size:13px; color:var(--text-600)}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">SSN</div>
+        <div>Sehat Sejahtera Nusantara</div>
+      </div>
+      <nav class="menu" aria-label="Menu utama">
+        <a href="#">Beranda</a>
+        <a href="katalog.html">Katalog Produk</a>
+        <a href="#">Jaringan</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Media Sosial</a>
+        <a href="#">Tentang SSN</a>
+        <a href="#">Kontak</a>
+      </nav>
+      <div>
+        <a class="btn btn-primary" href="#">Belanja Produk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero section">
+    <div class="container grid-12">
+      <div class="col-span-6 t-col-span-6 m-col-span-12">
+        <h1>Belanja sehat, jaringan adil, edukasi yang jujur.</h1>
+        <p>SSN menghubungkan produk berkualitas, peluang mitra yang transparan, dan konten edukatif untuk hidup lebih sehat.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#">Belanja Produk Sehat</a>
+          <a class="btn btn-outline" href="#">Gabung Jaringan Mitra</a>
+          <a class="btn btn-outline" href="#">Baca Artikel</a>
+        </div>
+        <div class="badges" aria-label="Keunggulan singkat">
+          <span class="badge">Produk Terkurasi</span>
+          <span class="badge">Harga Adil</span>
+          <span class="badge">Edukasi Praktis</span>
+        </div>
+      </div>
+      <div class="col-span-6 t-col-span-6 m-col-span-12">
+        <div class="hero-img" aria-hidden="true">
+          <img loading="lazy" src="https://placehold.co/800x520/ffffff/e2e8f0?text=Gambar+Hero" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Pilar -->
+  <section class="section">
+    <div class="container">
+      <h2>3 Pilar SSN</h2>
+      <div class="grid-12">
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <div class="icon">🛒</div>
+          <h3>Produk Sehat</h3>
+          <p>Kurasi ketat, informasi jelas, sertifikasi bila ada. Lihat katalog kami.</p>
+        </div>
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <div class="icon">🤝</div>
+          <h3>Jaringan Adil</h3>
+          <p>Skema transparan, pelatihan, pembayaran cepat untuk mitra.</p>
+        </div>
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <div class="icon">📚</div>
+          <h3>Edukasi</h3>
+          <p>Artikel ringkas, mudah dipahami, tanpa clickbait—langsung praktik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produk Unggulan -->
+  <section class="section">
+    <div class="container">
+      <h2>Produk Unggulan</h2>
+      <div class="grid-12">
+        <div class="card col-span-3 t-col-span-6 m-col-span-12 product">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Produk+1" alt="Produk unggulan 1">
+          <h3>Nama Produk 1</h3>
+          <div class="price">Rp 150.000</div>
+          <p class="subtle">Manfaat singkat produk…</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#">Beli</a>
+            <a class="btn btn-outline" href="#">Detail</a>
+          </div>
+        </div>
+        <div class="card col-span-3 t-col-span-6 m-col-span-12 product">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Produk+2" alt="Produk unggulan 2">
+          <h3>Nama Produk 2</h3>
+          <div class="price">Rp 95.000</div>
+          <p class="subtle">Manfaat singkat produk…</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#">Beli</a>
+            <a class="btn btn-outline" href="#">Detail</a>
+          </div>
+        </div>
+        <div class="card col-span-3 t-col-span-6 m-col-span-12 product">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Produk+3" alt="Produk unggulan 3">
+          <h3>Nama Produk 3</h3>
+          <div class="price">Rp 220.000</div>
+          <p class="subtle">Manfaat singkat produk…</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#">Beli</a>
+            <a class="btn btn-outline" href="#">Detail</a>
+          </div>
+        </div>
+        <div class="card col-span-3 t-col-span-6 m-col-span-12 product">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Produk+4" alt="Produk unggulan 4">
+          <h3>Nama Produk 4</h3>
+          <div class="price">Rp 180.000</div>
+          <p class="subtle">Manfaat singkat produk…</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#">Beli</a>
+            <a class="btn btn-outline" href="#">Detail</a>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:10px"><a href="katalog.html">Lihat semua produk →</a></p>
+    </div>
+  </section>
+
+  <!-- Jaringan (Mitra) -->
+  <section class="section">
+    <div class="container">
+      <h2>Gabung Jaringan Mitra</h2>
+      <div class="grid-12">
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <div class="step-num">1</div>
+          <h3>Daftar</h3>
+          <p>Isi formulir singkat (nama, WA, kota).</p>
+        </div>
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <div class="step-num">2</div>
+          <h3>Onboarding</h3>
+          <p>Dapat materi, harga, panduan, dan dukungan.</p>
+        </div>
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <div class="step-num">3</div>
+          <h3>Mulai Jualan</h3>
+          <p>Terima pesanan, pembayaran cepat & transparan.</p>
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <a class="btn btn-primary" href="#">Daftar Mitra Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Edukasi -->
+  <section class="section">
+    <div class="container">
+      <h2>Edukasi Terbaru</h2>
+      <div class="grid-12">
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 post">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Artikel+1" alt="Artikel 1">
+          <h3>Judul Artikel 1</h3>
+          <div class="meta">Gizi • 12 Jan 2025</div>
+          <p class="subtle">Ringkasan singkat artikel…</p>
+          <a class="btn btn-outline" href="#">Baca</a>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 post">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Artikel+2" alt="Artikel 2">
+          <h3>Judul Artikel 2</h3>
+          <div class="meta">Keluarga • 9 Jan 2025</div>
+          <p class="subtle">Ringkasan singkat artikel…</p>
+          <a class="btn btn-outline" href="#">Baca</a>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 post">
+          <img loading="lazy" src="https://placehold.co/600x400?text=Artikel+3" alt="Artikel 3">
+          <h3>Judul Artikel 3</h3>
+          <div class="meta">UMKM • 5 Jan 2025</div>
+          <p class="subtle">Ringkasan singkat artikel…</p>
+          <a class="btn btn-outline" href="#">Baca</a>
+        </article>
+      </div>
+      <p style="margin-top:10px"><a href="#">Lihat semua artikel →</a></p>
+    </div>
+  </section>
+
+  <!-- Testimoni / Trust -->
+  <section class="section">
+    <div class="container">
+      <h2>Apa kata mereka</h2>
+      <div class="grid-12">
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <blockquote>
+            <p>“Produknya jelas dan pengiriman cepat. Recommended!”</p>
+            <footer class="subtle">— Rina, Depok</footer>
+          </blockquote>
+        </div>
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <blockquote>
+            <p>“Skema mitranya transparan, cocok buat pemula.”</p>
+            <footer class="subtle">— Budi, Bandung</footer>
+          </blockquote>
+        </div>
+        <div class="card col-span-4 t-col-span-6 m-col-span-12">
+          <blockquote>
+            <p>“Artikelnya singkat tapi nendang, gampang dipraktekkan.”</p>
+            <footer class="subtle">— Dita, Surabaya</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cara Order -->
+  <section class="section">
+    <div class="container">
+      <h2>Cara Order</h2>
+      <div class="howto grid-12">
+        <div class="col-span-4 t-col-span-6 m-col-span-12"><strong>1. Pilih produk</strong><br><span class="subtle">Lihat katalog & tentukan produk</span></div>
+        <div class="col-span-4 t-col-span-6 m-col-span-12"><strong>2. Chat WhatsApp</strong><br><span class="subtle">Konfirmasi pesanan & alamat</span></div>
+        <div class="col-span-4 t-col-span-6 m-col-span-12"><strong>3. Bayar & kirim</strong><br><span class="subtle">Order diproses dengan cepat</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsor Pendukung SSN -->
+  <section class="section sponsors">
+    <div class="container">
+      <h2>Sponsor Pendukung SSN</h2>
+      <p class="subtle">Terima kasih kepada mitra yang mendukung gerakan hidup sehat dan sejahtera.</p>
+      <div class="grid-12" role="list">
+        <a class="logo-box col-span-2 t-col-span-6 m-col-span-12" href="#" target="_blank" rel="noopener"><img loading="lazy" src="https://placehold.co/200x60?text=Logo+1" alt="Sponsor: Logo 1"></a>
+        <a class="logo-box col-span-2 t-col-span-6 m-col-span-12" href="#" target="_blank" rel="noopener"><img loading="lazy" src="https://placehold.co/200x60?text=Logo+2" alt="Sponsor: Logo 2"></a>
+        <a class="logo-box col-span-2 t-col-span-6 m-col-span-12" href="#" target="_blank" rel="noopener"><img loading="lazy" src="https://placehold.co/200x60?text=Logo+3" alt="Sponsor: Logo 3"></a>
+        <a class="logo-box col-span-2 t-col-span-6 m-col-span-12" href="#" target="_blank" rel="noopener"><img loading="lazy" src="https://placehold.co/200x60?text=Logo+4" alt="Sponsor: Logo 4"></a>
+        <a class="logo-box col-span-2 t-col-span-6 m-col-span-12" href="#" target="_blank" rel="noopener"><img loading="lazy" src="https://placehold.co/200x60?text=Logo+5" alt="Sponsor: Logo 5"></a>
+        <a class="logo-box col-span-2 t-col-span-6 m-col-span-12" href="#" target="_blank" rel="noopener"><img loading="lazy" src="https://placehold.co/200x60?text=Logo+6" alt="Sponsor: Logo 6"></a>
+      </div>
+      <p class="subtle" style="margin-top:8px">Logo ditampilkan dengan izin masing‑masing pemilik merek.</p>
+      <p style="margin-top:6px"><a href="#">Ingin jadi sponsor? Pelajari paket sponsor →</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="grid-12 footgrid">
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Sehat Sejahtera Nusantara</strong>
+          <p class="subtle">Belanja sehat, jaringan adil, edukasi yang jujur.</p>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Katalog</strong><br>
+          <a href="katalog.html">Produk</a><br>
+          <a href="#">Biogreen (Official)</a><br>
+          <a href="#">Promo</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Bantuan</strong><br>
+          <a href="#">FAQ</a><br>
+          <a href="#">Pengiriman</a><br>
+          <a href="#">Pengembalian</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Legal</strong><br>
+          <a href="#">Privasi</a><br>
+          <a href="#">S&K</a><br>
+          <a href="#">Kebijakan Iklan</a>
+        </div>
+      </div>
+      <div class="copy">© 2025 SSN. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
