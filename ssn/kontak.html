@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak — SSN</title>
+  <meta name="description" content="Butuh bantuan? Balas cepat (maks. 1x24 jam).">
+  <style>
+    :root{--green-50:#F0FDF4; --green-100:#DCFCE7; --green-500:#22C55E; --green-600:#16A34A; --text-900:#111827; --text-600:#475569; --border:#E2E8F0; --white:#FFFFFF; --radius:12px; --gap:16px; --maxw:1200px}
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; color:var(--text-900); background:#fff; line-height:1.6}
+    a{color:var(--green-600); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+
+    .grid-12{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:var(--gap)}
+    .col-span-1{grid-column:span 1}.col-span-2{grid-column:span 2}.col-span-3{grid-column:span 3}.col-span-4{grid-column:span 4}.col-span-5{grid-column:span 5}.col-span-6{grid-column:span 6}.col-span-7{grid-column:span 7}.col-span-8{grid-column:span 8}.col-span-9{grid-column:span 9}.col-span-10{grid-column:span 10}.col-span-11{grid-column:span 11}.col-span-12{grid-column:span 12}
+    @media (max-width: 1024px){ .t-col-span-6{grid-column:span 6} .t-col-span-12{grid-column:span 12} }
+    @media (max-width: 480px){ .m-col-span-12{grid-column:span 12} }
+
+    header{position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--border)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand-badge{width:36px; height:36px; border-radius:8px; background:var(--green-600); display:grid; place-items:center; color:#fff; font-weight:800}
+    .menu{display:flex; gap:16px; flex-wrap:wrap}
+    .menu a{color:var(--text-900)}
+    .btn{display:inline-block; padding:12px 18px; border-radius:10px; border:1px solid transparent; font-weight:700}
+    .btn-primary{background:var(--green-600); color:#fff; border-color:var(--green-600)}
+    .btn-outline{background:#fff; color:var(--green-600); border-color:var(--green-500)}
+
+    .section{padding:48px 0}
+    .subtle{color:var(--text-600); font-size:13px}
+
+    .card{background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px}
+    .map{height:150px; border:1px dashed var(--border); border-radius:10px; display:grid; place-items:center; color:var(--text-600)}
+
+    .hero{background:var(--green-50)}
+    .hero h1{margin:0 0 8px; font-size:28px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">SSN</div>
+        <div>Sehat Sejahtera Nusantara</div>
+      </div>
+      <nav class="menu" aria-label="Menu utama">
+        <a href="index.html">Beranda</a>
+        <a href="katalog.html">Katalog</a>
+        <a href="jaringan.html">Jaringan</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Media Sosial</a>
+        <a href="#">Tentang SSN</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+      <div><a class="btn btn-outline" href="#">Chat WhatsApp</a></div>
+    </div>
+  </header>
+
+  <section class="hero section">
+    <div class="container">
+      <h1>Kontak SSN</h1>
+      <p class="subtle">Butuh bantuan? Balas cepat (maks. 1x24 jam).</p>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container grid-12">
+      <!-- WhatsApp -->
+      <section class="col-span-6 t-col-span-12 m-col-span-12 card">
+        <h2 style="margin:0 0 8px">WhatsApp</h2>
+        <a class="btn btn-outline" href="#" style="display:inline-block">Chat WhatsApp</a>
+        <div class="subtle" style="margin-top:6px">Balas cepat (maks. 1x24 jam)</div>
+        <h3 style="margin:16px 0 6px; font-size:16px">Nomor resmi</h3>
+        <p class="subtle" style="margin:0">+62 821-8898-9240</p>
+        <h3 style="margin:12px 0 6px; font-size:16px">Jam</h3>
+        <p class="subtle" style="margin:0">Maks. 1x24 jam (setiap hari)</p>
+      </section>
+
+      <!-- Alamat -->
+      <section class="col-span-6 t-col-span-12 m-col-span-12 card">
+        <h2 style="margin:0 0 8px">Alamat</h2>
+        <p class="subtle" style="margin:0 0 10px">Tallo, Makassar, Sulawesi Selatan — Indonesia</p>
+        <p class="subtle" style="margin:0 0 12px; font-size:12px">Alamat lengkap diberikan setelah pesanan/appointment.</p>
+        <div class="map">Area peta</div>
+      </section>
+
+      <!-- Form opsional -->
+      <section class="col-span-6 t-col-span-12 m-col-span-12 card" style="margin-top:16px">
+        <h2 style="margin:0 0 8px">Formulir (opsional)</h2>
+        <p class="subtle" style="margin:0 0 12px; font-size:12px">Anda juga bisa chat via WhatsApp untuk balasan lebih cepat.</p>
+        <div class="grid-12">
+          <input class="col-span-6 t-col-span-12 m-col-span-12" style="padding:10px 12px; border:1px solid var(--border); border-radius:10px; margin-bottom:10px" placeholder="Nama">
+          <input class="col-span-6 t-col-span-12 m-col-span-12" style="padding:10px 12px; border:1px solid var(--border); border-radius:10px; margin-bottom:10px" placeholder="WhatsApp">
+          <textarea class="col-span-12" style="padding:10px 12px; border:1px solid var(--border); border-radius:10px; height:90px" placeholder="Pesan"></textarea>
+        </div>
+        <div style="margin-top:12px"><a class="btn btn-primary" href="#">Kirim</a></div>
+      </section>
+
+      <!-- Keamanan -->
+      <section class="col-span-6 t-col-span-12 m-col-span-12 card" style="margin-top:16px; background:var(--green-50); border-style:dashed">
+        <h2 style="margin:0 0 8px">Keamanan</h2>
+        <p class="subtle" style="margin:0">• Kami tidak pernah meminta kode OTP atau password.</p>
+        <p class="subtle" style="margin:6px 0 0">• Hanya percaya nomor resmi: +62 821-8898-9240.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid-12">
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Sehat Sejahtera Nusantara</strong>
+          <p class="subtle">Belanja sehat, jaringan adil, edukasi yang jujur.</p>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Katalog</strong><br>
+          <a href="katalog.html">Produk</a><br>
+          <a href="#">Biogreen (Official)</a><br>
+          <a href="#">Promo</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Bantuan</strong><br>
+          <a href="#">FAQ</a><br>
+          <a href="#">Pengiriman</a><br>
+          <a href="#">Pengembalian</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Legal</strong><br>
+          <a href="#">Privasi</a><br>
+          <a href="#">S&K</a><br>
+          <a href="#">Kebijakan Iklan</a>
+        </div>
+      </div>
+      <div class="subtle" style="margin-top:12px">© 2025 SSN. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+</body>
+</html>

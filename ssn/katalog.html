@@ -68,8 +68,10 @@
     footer{border-top:1px solid var(--border); padding:24px 0; background:#fff}
     .copy{margin-top:14px; font-size:13px; color:var(--text-600)}
 
-    /* Floating WA */
-    .fab-wa{position:fixed; right:18px; bottom:18px; width:56px; height:56px; border-radius:999px; background:var(--green-600); color:#fff; display:grid; place-items:center; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.15); text-decoration:none}
+    /* Aksi cepat: Chat WhatsApp */
+    .cta-fab{position:fixed; right:18px; bottom:18px; width:200px; border:1px solid var(--border); border-radius:14px; background:#fff; box-shadow:0 10px 20px rgba(0,0,0,.1); padding:12px}
+    .cta-fab .btn{width:100%; text-align:center}
+    .cta-fab .note{margin-top:6px; font-size:12px; color:var(--text-600); text-align:center}
   </style>
 </head>
 <body>
@@ -82,11 +84,11 @@
       <nav class="menu" aria-label="Menu utama">
         <a href="index.html">Beranda</a>
         <a href="#">Katalog Produk</a>
-        <a href="#">Jaringan</a>
+        <a href="jaringan.html">Jaringan</a>
         <a href="#">Edukasi</a>
         <a href="#">Media Sosial</a>
         <a href="#">Tentang SSN</a>
-        <a href="#">Kontak</a>
+        <a href="kontak.html">Kontak</a>
       </nav>
       <div><a class="btn btn-primary" href="#">Belanja Produk</a></div>
     </div>
@@ -336,6 +338,9 @@
     </div>
   </footer>
 
-  <a class="fab-wa" href="#" aria-label="Hubungi via WhatsApp">WA</a>
+  <div class="cta-fab" aria-label="Aksi cepat">
+    <a class="btn btn-outline" href="#">Chat WhatsApp</a>
+    <div class="note">Balas cepat (maks. 1x24 jam)</div>
+  </div>
 </body>
 </html>
