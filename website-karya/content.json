@@ -1,0 +1,58 @@
+{
+	"site": {
+		"title": "Karya Saya",
+		"tagline": "Portofolio sederhana",
+		"theme": {
+			"primary": "#1e90ff",
+			"accent": "#ff7a59",
+			"background": "#0f172a",
+			"foreground": "#e2e8f0"
+		}
+	},
+	"navigation": [
+		{ "label": "Beranda", "href": "#beranda" },
+		{ "label": "Galeri", "href": "#galeri" },
+		{ "label": "Tentang", "href": "#tentang" },
+		{ "label": "Kontak", "href": "#kontak" }
+	],
+	"hero": {
+		"headline": "Halo, saya Nama Anda",
+		"subheadline": "Ini kumpulan karya saya.",
+		"cta": { "label": "Lihat Galeri", "href": "#galeri" },
+		"image": "assets/hero.jpg"
+	},
+	"gallery": [
+		{
+			"title": "Karya 1",
+			"image": "assets/sample1.jpg",
+			"description": "Deskripsi singkat karya pertama."
+		},
+		{
+			"title": "Karya 2",
+			"image": "assets/sample2.jpg",
+			"description": "Deskripsi singkat karya kedua."
+		},
+		{
+			"title": "Karya 3",
+			"image": "assets/sample3.jpg",
+			"description": "Deskripsi singkat karya ketiga."
+		}
+	],
+	"about": {
+		"title": "Tentang Saya",
+		"content": [
+			"Saya berkarya di bidang yang saya sukai.",
+			"Ini adalah ruang untuk memamerkan karya terbaik saya."
+		],
+		"photo": "assets/profile.jpg"
+	},
+	"contact": {
+		"title": "Kontak",
+		"description": "Ingin berdiskusi? Silakan hubungi saya.",
+		"items": [
+			{ "type": "email", "label": "Email", "value": "you@example.com" },
+			{ "type": "link", "label": "Instagram", "value": "https://instagram.com/your" },
+			{ "type": "link", "label": "Website", "value": "https://example.com" }
+		]
+	}
+}
