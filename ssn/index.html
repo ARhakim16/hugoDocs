@@ -101,6 +101,14 @@
     .menu .dd:hover .dd-menu, .menu .dd:focus-within .dd-menu{display:block}
     .menu .dd-menu a{display:block; padding:8px 10px; color:var(--text-900); border-radius:8px; text-decoration:none}
     .menu .dd-menu a:hover{background:var(--green-50)}
+
+    /* Mega dropdown Katalog */
+    .menu .dd-mega{position:relative}
+    .menu .mega-menu{position:absolute; top:calc(100% + 8px); left:0; background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; display:none; min-width:520px; box-shadow:0 12px 28px rgba(0,0,0,.1)}
+    .menu .dd-mega:hover .mega-menu, .menu .dd-mega:focus-within .mega-menu{display:block}
+    .mega-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 18px}
+    .mega-menu a{display:block; padding:8px 10px; border-radius:8px; color:var(--text-900); text-decoration:none}
+    .mega-menu a:hover{background:var(--green-50)}
   </style>
 </head>
 <body>
@@ -114,7 +122,28 @@
       </div>
       <nav class="menu" aria-label="Menu utama">
         <a href="index.html">Beranda</a>
-        <a href="katalog.html">Katalog Produk</a>
+        <span class="dd-mega"><a href="katalog.html">Katalog ▾</a>
+          <div class="mega-menu" role="menu" aria-label="Submenu Katalog">
+            <div class="mega-grid">
+              <div>
+                <strong>Semua</strong>
+                <a href="katalog.html">Semua Produk</a>
+              </div>
+              <div>
+                <strong>Kategori</strong>
+                <a href="katalog.html#kesehatan">Kesehatan</a>
+                <a href="katalog.html#kecantikan">Kecantikan</a>
+                <a href="katalog.html#kebugaran">Kebugaran</a>
+                <a href="katalog.html#makanan-minuman">Makanan & Minuman</a>
+                <a href="katalog.html#produk-digital">Produk Digital</a>
+                <a href="katalog.html#rumah-tangga">Rumah Tangga</a>
+                <a href="katalog.html#aksesoris-elektronik">Aksesoris & Elektronik</a>
+                <a href="katalog.html#preloved">Preloved</a>
+                <a href="katalog.html#properti">Properti</a>
+              </div>
+            </div>
+          </div>
+        </span>
         <a href="jaringan.html">Jaringan</a>
         <span class="dd">
           <a href="edukasi.html">Edukasi ▾</a>
@@ -128,12 +157,11 @@
             <a href="edukasi.html#promosi">Promosi</a>
           </div>
         </span>
-        <a href="#">Media Sosial</a>
-        <a href="#">Tentang SSN</a>
-        <a href="kontak.html">Kontak</a>
+        <a href="media-sosial.html">Media Sosial</a>
+        <a href="tentang-kontak.html">Tentang & Kontak</a>
       </nav>
       <div>
-        <a class="btn btn-primary" href="#">Belanja Produk</a>
+        <a class="btn btn-outline" href="https://wa.me/6282188989240?text=Halo%20SSN" target="_blank" rel="noopener">Chat WhatsApp</a>
       </div>
     </div>
   </header>
