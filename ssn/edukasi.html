@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edukasi — SSN</title>
+  <meta name="description" content="Artikel edukasi singkat, jelas, dan praktis. Balas cepat (maks. 1x24 jam) jika butuh bantuan.">
+  <style>
+    :root{--green-50:#F0FDF4; --green-100:#DCFCE7; --green-500:#22C55E; --green-600:#16A34A; --text-900:#111827; --text-600:#475569; --border:#E2E8F0; --white:#FFFFFF; --radius:12px; --gap:16px; --maxw:1200px}
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; color:#111827; background:#fff; line-height:1.6}
+    a{color:var(--green-600); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+
+    .grid-12{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:var(--gap)}
+    .col-span-1{grid-column:span 1}.col-span-2{grid-column:span 2}.col-span-3{grid-column:span 3}.col-span-4{grid-column:span 4}.col-span-5{grid-column:span 5}.col-span-6{grid-column:span 6}.col-span-7{grid-column:span 7}.col-span-8{grid-column:span 8}.col-span-9{grid-column:span 9}.col-span-10{grid-column:span 10}.col-span-11{grid-column:span 11}.col-span-12{grid-column:span 12}
+    @media (max-width: 1024px){ .t-col-span-6{grid-column:span 6} .t-col-span-12{grid-column:span 12} }
+    @media (max-width: 480px){ .m-col-span-12{grid-column:span 12} }
+
+    header{position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--border)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand-badge{width:36px; height:36px; border-radius:8px; background:var(--green-600); display:grid; place-items:center; color:#fff; font-weight:800}
+    .menu{display:flex; gap:16px; flex-wrap:wrap}
+    .menu a{color:#111827}
+    .btn{display:inline-block; padding:10px 16px; border-radius:10px; border:1px solid transparent; font-weight:700}
+    .btn-primary{background:var(--green-600); color:#fff; border-color:var(--green-600)}
+    .btn-outline{background:#fff; color:var(--green-600); border-color:var(--green-500)}
+
+    .section{padding:40px 0}
+    .subtle{color:var(--text-600); font-size:13px}
+
+    .searchbar{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .searchbar .input{flex:1 1 300px; min-width:240px; padding:10px 12px; border:1px solid var(--border); border-radius:10px}
+
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .chip{padding:8px 12px; border-radius:999px; border:1px solid var(--green-500); background:#fff; color:#166534; font-weight:700; font-size:12px}
+
+    .card{background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px}
+    .promo-banner{background:var(--green-50); border:1px dashed var(--border); border-radius:12px; height:56px; display:grid; place-items:center}
+
+    .highlight .tag{display:inline-block; padding:4px 8px; border-radius:999px; background:var(--green-100); color:#166534; font-size:11px; font-weight:800; border:1px solid #ccead8}
+
+    .article-card h3{margin:0 0 6px; font-size:16px}
+    .article-card .meta{font-size:12px; color:var(--text-600)}
+
+    footer{border-top:1px solid var(--border); padding:24px 0; background:#fff}
+    .copy{margin-top:14px; font-size:13px; color:var(--text-600)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">SSN</div>
+        <div>Sehat Sejahtera Nusantara</div>
+      </div>
+      <nav class="menu" aria-label="Menu utama">
+        <a href="index.html">Beranda</a>
+        <a href="katalog.html">Katalog</a>
+        <a href="jaringan.html">Jaringan</a>
+        <a href="edukasi.html">Edukasi</a>
+        <a href="#">Media Sosial</a>
+        <a href="#">Tentang SSN</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+      <div><a class="btn btn-outline" href="https://wa.me/6282188989240?text=Halo%20SSN" target="_blank" rel="noopener">Chat WhatsApp</a></div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 style="margin:0 0 12px">Edukasi</h1>
+      <div class="searchbar">
+        <input class="input" type="search" placeholder="Cari topik (mis. aliran darah, binary, toko digital)…" aria-label="Cari artikel">
+        <div>
+          <a class="btn btn-outline" href="https://wa.me/6282188989240?text=Halo%20SSN" target="_blank" rel="noopener">Chat WhatsApp</a>
+          <div class="subtle" style="font-size:12px; margin-top:4px">Balas cepat (maks. 1x24 jam)</div>
+        </div>
+      </div>
+
+      <div class="chips" aria-label="Kategori artikel">
+        <button class="chip" type="button">Awareness</button>
+        <button class="chip" type="button">Ilmu Kesehatan</button>
+        <button class="chip" type="button">Penyakit</button>
+        <button class="chip" type="button">Keseharian</button>
+        <button class="chip" type="button">Finansial</button>
+        <button class="chip" type="button">Ulasan</button>
+        <button class="chip" type="button">Promosi</button>
+      </div>
+
+      <h2 style="margin:18px 0 10px; font-size:18px">Artikel Sorotan</h2>
+      <div class="grid-12 highlight">
+        <article class="card col-span-4 t-col-span-6 m-col-span-12">
+          <span class="tag">Edukasi</span>
+          <h3 style="margin:8px 0 4px"><a href="artikel-aliran-darah.html">Aliran darah: cara kerja</a></h3>
+          <p class="subtle" style="margin:0">Kebiasaan sederhana untuk bantu sirkulasi.</p>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12">
+          <span class="tag">Finansial</span>
+          <h3 style="margin:8px 0 4px"><a href="#">Binary MLM: cara kerja</a></h3>
+          <p class="subtle" style="margin:0">Pairing, cap, dan langkah aman.</p>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12">
+          <span class="tag">Edukasi</span>
+          <h3 style="margin:8px 0 4px"><a href="#">Stem cell: mitos vs fakta</a></h3>
+          <p class="subtle" style="margin:0">Apa yang realistis dan berizin.</p>
+        </article>
+      </div>
+
+      <div class="promo-banner" style="margin:16px 0"><span class="subtle">Promosi: banner tipis (ditandai "Promosi")</span></div>
+
+      <h2 style="margin:0 0 10px; font-size:18px">Artikel Terbaru</h2>
+      <div class="grid-12">
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 article-card">
+          <h3><a href="artikel-aliran-darah.html">Aliran darah</a></h3>
+          <div class="meta">5–7 menit • Edukasi</div>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 article-card">
+          <h3><a href="#">Binary MLM</a></h3>
+          <div class="meta">6–8 menit • Finansial</div>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 article-card">
+          <h3><a href="#">Toko Digital</a></h3>
+          <div class="meta">6–8 menit • Finansial</div>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 article-card">
+          <h3><a href="#">Stem cell</a></h3>
+          <div class="meta">6–8 menit • Edukasi</div>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 article-card">
+          <h3><a href="#">Diabetes</a></h3>
+          <div class="meta">7–9 menit • Edukasi</div>
+        </article>
+        <article class="card col-span-4 t-col-span-6 m-col-span-12 article-card">
+          <h3><a href="#">DNA: gen vs gaya hidup</a></h3>
+          <div class="meta">5–7 menit • Edukasi</div>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="grid-12" style="align-items:center">
+          <div class="col-span-9 t-col-span-12 m-col-span-12">
+            <h3 style="margin:0 0 4px">Tanya Kami</h3>
+            <p class="subtle" style="margin:0">Bingung soal topik ini? Chat WhatsApp — balas cepat (maks. 1x24 jam).</p>
+          </div>
+          <div class="col-span-3 t-col-span-12 m-col-span-12" style="text-align:right">
+            <a class="btn btn-outline" href="https://wa.me/6282188989240?text=Halo%20SSN" target="_blank" rel="noopener">Chat WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid-12">
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Sehat Sejahtera Nusantara</strong>
+          <p class="subtle">Belanja sehat, jaringan adil, edukasi yang jujur.</p>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Katalog</strong><br>
+          <a href="katalog.html">Produk</a><br>
+          <a href="#">Biogreen (Official)</a><br>
+          <a href="#">Promo</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Bantuan</strong><br>
+          <a href="#">FAQ</a><br>
+          <a href="#">Pengiriman</a><br>
+          <a href="#">Pengembalian</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Legal</strong><br>
+          <a href="#">Privasi</a><br>
+          <a href="#">S&K</a><br>
+          <a href="#">Kebijakan Iklan</a>
+        </div>
+      </div>
+      <div class="copy">© 2025 SSN. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+</body>
+</html>
