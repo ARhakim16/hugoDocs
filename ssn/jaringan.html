@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaringan — SSN</title>
+  <meta name="description" content="Gabung Jaringan SSN: adil, mudah, transparan.">
+  <style>
+    :root{--green-50:#F0FDF4; --green-100:#DCFCE7; --green-500:#22C55E; --green-600:#16A34A; --text-900:#111827; --text-600:#475569; --border:#E2E8F0; --white:#FFFFFF; --radius:12px; --gap:16px; --maxw:1200px}
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; color:var(--text-900); background:#fff; line-height:1.6}
+    a{color:var(--green-600); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+
+    /* Grid 12 kolom */
+    .grid-12{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:var(--gap)}
+    .col-span-1{grid-column:span 1}.col-span-2{grid-column:span 2}.col-span-3{grid-column:span 3}.col-span-4{grid-column:span 4}.col-span-5{grid-column:span 5}.col-span-6{grid-column:span 6}.col-span-7{grid-column:span 7}.col-span-8{grid-column:span 8}.col-span-9{grid-column:span 9}.col-span-10{grid-column:span 10}.col-span-11{grid-column:span 11}.col-span-12{grid-column:span 12}
+
+    /* Breakpoints */
+    @media (max-width: 1024px){ .t-col-span-6{grid-column:span 6} .t-col-span-12{grid-column:span 12} }
+    @media (max-width: 480px){ .m-col-span-12{grid-column:span 12} body{padding-bottom:76px} }
+
+    /* Header */
+    header{position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--border)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand-badge{width:36px; height:36px; border-radius:8px; background:var(--green-600); display:grid; place-items:center; color:#fff; font-weight:800}
+    .menu{display:flex; gap:16px; flex-wrap:wrap}
+    .menu a{color:var(--text-900)}
+    .btn{display:inline-block; padding:12px 18px; border-radius:10px; border:1px solid transparent; font-weight:700}
+    .btn-primary{background:var(--green-600); color:#fff; border-color:var(--green-600)}
+    .btn-outline{background:#fff; color:var(--green-600); border-color:var(--green-500)}
+
+    .section{padding:48px 0}
+    @media (max-width:1024px){.section{padding:40px 0}}
+    @media (max-width:480px){.section{padding:32px 0}}
+
+    /* Hero */
+    .hero{background:var(--green-50)}
+    .hero h1{font-size:34px; line-height:1.2; margin:0 0 10px}
+    @media (max-width:1024px){.hero h1{font-size:30px}}
+    @media (max-width:480px){.hero h1{font-size:24px}}
+    .hero p{color:var(--text-600); margin:0 0 16px}
+    .hero-ctas{display:flex; gap:12px; flex-wrap:wrap}
+
+    /* Card */
+    .card{background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px}
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--text-600)}
+    .actions{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+
+    /* Promo/notice */
+    .notice{background:var(--green-50); border:1px dashed var(--border); border-radius:12px; padding:14px}
+
+    /* Sticky CTA (desktop/tablet) */
+    .cta-fab{display:none; position:fixed; right:18px; bottom:18px; width:200px; border:1px solid var(--border); border-radius:14px; background:#fff; box-shadow:0 10px 20px rgba(0,0,0,.1); padding:12px}
+    .cta-fab h4{margin:0 0 8px; font-size:12px; color:var(--text-600); text-align:center}
+    .cta-fab .stack{display:grid; gap:10px}
+    @media (min-width: 600px){ .cta-fab{display:block} }
+    @media (max-width:480px){ .cta-fab{display:none} }
+
+    /* Sticky bottom bar (HP) */
+    .cta-bar{position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid var(--border); padding:10px 12px; display:none; gap:10px}
+    .cta-bar .btn{flex:1; text-align:center; padding:12px 10px}
+    @media (max-width:480px){ .cta-bar{display:flex} }
+
+    /* Small helpers */
+    .muted{color:var(--text-600)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">SSN</div>
+        <div>Sehat Sejahtera Nusantara</div>
+      </div>
+      <nav class="menu" aria-label="Menu utama">
+        <a href="index.html">Beranda</a>
+        <a href="katalog.html">Katalog</a>
+        <a href="#">Jaringan</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Media Sosial</a>
+        <a href="#">Tentang SSN</a>
+        <a href="#">Kontak</a>
+      </nav>
+      <div><a class="btn btn-primary" href="#">Belanja Produk</a></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero section">
+    <div class="container grid-12">
+      <div class="col-span-12 t-col-span-12 m-col-span-12">
+        <h1>Gabung Jaringan SSN: adil, mudah, transparan.</h1>
+        <p>Untuk Biogreen (MLM), Toko Mitra, Reseller/Afiliasi, Pemasok/UMKM, Komunitas, Kreator Digital, dan Pemerintah/BUMN/BUMD.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#">Daftar Sekarang</a>
+          <a class="btn btn-outline" href="#">Chat WA 24/7</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Pilih Jalur Kemitraan -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">Pilih Jalur Kemitraan</h2>
+        <div class="grid-12">
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Biogreen (MLM)</h3>
+            <p>Daftar via link sponsor, edukasi etika, binary.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Toko Mitra SSN</h3>
+            <p>Konsinyasi, Agen Pick‑Up, atau Mini Outlet.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Reseller/Afiliasi</h3>
+            <p>Komisi fisik & digital, materi siap pakai.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Pemasok/UMKM</h3>
+            <p>Konsinyasi/beli‑putus, pembayaran cepat.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Komunitas/Partner</h3>
+            <p>Event, sponsor, kode kupon.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Kreator Produk Digital</h3>
+            <p>Bagi hasil 70/30 (contoh), afiliasi 25%.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Pemerintah/BUMN/BUMD</h3>
+            <p>e‑Katalog, PL kecil, CSR/Wellness.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manfaat Utama -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">Manfaat Utama</h2>
+        <div class="grid-12">
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Transparan & adil</h3>
+            <p>Harga, komisi, margin jelas.</p>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Materi siap pakai</h3>
+            <p>Foto, caption, skrip WA.</p>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>Bantuan 24/7</h3>
+            <p>Asisten AI + tim.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cara Bergabung -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">Cara Bergabung</h2>
+        <div class="grid-12">
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>1. Isi Form (5 menit)</h3>
+            <p>Pilih jalur yang cocok.</p>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>2. Verifikasi & onboarding</h3>
+            <p>≤ 1×3 hari.</p>
+          </div>
+          <div class="card col-span-4 t-col-span-6 m-col-span-12">
+            <h3>3. Mulai jalan</h3>
+            <p>Materi & price list siap.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Ringkas -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">Detail Ringkas (contoh)</h2>
+        <div class="grid-12">
+          <div class="card col-span-6 t-col-span-12 m-col-span-12">
+            <h3>Biogreen (MLM)</h3>
+            <p>Binary kiri/kanan, patuhi aturan harga & klaim. Bonus sesuai buku resmi Biogreen.</p>
+            <div class="actions"><a class="btn btn-primary" href="#">Daftar</a></div>
+          </div>
+          <div class="card col-span-6 t-col-span-12 m-col-span-12">
+            <h3>Toko Mitra</h3>
+            <p>Konsinyasi 15–25%, Agen (fee/order), Outlet 20–30%. Setor rekap mingguan, cair D+2 (contoh).</p>
+            <div class="actions"><a class="btn btn-outline" href="#">WA 24/7</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">FAQ</h2>
+        <div class="card">
+          <div class="grid-12">
+            <div class="col-span-4 t-col-span-12 m-col-span-12">
+              <h3 style="margin:0 0 6px; font-size:16px">Harus berpengalaman?</h3>
+              <p>Tidak. Ada pelatihan singkat & materi siap pakai.</p>
+            </div>
+            <div class="col-span-4 t-col-span-12 m-col-span-12">
+              <h3 style="margin:0 0 6px; font-size:16px">Kapan komisi cair?</h3>
+              <p>Rekap mingguan, cair D+2 (contoh).</p>
+            </div>
+            <div class="col-span-4 t-col-span-12 m-col-span-12">
+              <h3 style="margin:0 0 6px; font-size:16px">Eksklusif?</h3>
+              <p>Tidak wajib. Patuhi aturan merek.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keamanan & Etika -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">Keamanan & Etika</h2>
+        <div class="notice">
+          <p style="margin:0">• Nomor resmi hanya: <strong>+62 821-8898-9240</strong>. Kami tidak pernah meminta kode OTP.</p>
+          <p style="margin:6px 0 0">• Klaim kesehatan: pakai kata “membantu/mendukung”, tampilkan komposisi.</p>
+          <p style="margin:6px 0 0">• Penghasilan tiap orang berbeda. Butuh usaha & waktu.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA akhir -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin:0 0 14px; font-size:22px">Siap bergabung?</h2>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Daftar Sekarang</a>
+          <a class="btn btn-outline" href="#">Chat WA 24/7</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid-12">
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Sehat Sejahtera Nusantara</strong>
+          <p class="muted">Belanja sehat, jaringan adil, edukasi yang jujur.</p>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Katalog</strong><br>
+          <a href="katalog.html">Produk</a><br>
+          <a href="#">Biogreen (Official)</a><br>
+          <a href="#">Promo</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Bantuan</strong><br>
+          <a href="#">FAQ</a><br>
+          <a href="#">Pengiriman</a><br>
+          <a href="#">Pengembalian</a>
+        </div>
+        <div class="col-span-3 t-col-span-6 m-col-span-12">
+          <strong>Legal</strong><br>
+          <a href="#">Privasi</a><br>
+          <a href="#">S&K</a><br>
+          <a href="#">Kebijakan Iklan</a>
+        </div>
+      </div>
+      <div class="muted" style="margin-top:12px">© 2025 SSN. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA floating (desktop/tablet) -->
+  <div class="cta-fab" aria-label="Aksi cepat">
+    <h4>Aksi cepat</h4>
+    <div class="stack">
+      <a class="btn btn-primary" href="#">Daftar</a>
+      <a class="btn btn-outline" href="#">WA 24/7</a>
+    </div>
+  </div>
+
+  <!-- Sticky bottom bar (HP) -->
+  <div class="cta-bar" aria-label="Aksi cepat di HP">
+    <a class="btn btn-primary" href="#" style="margin:0">Daftar</a>
+    <a class="btn btn-outline" href="#" style="margin:0">WA 24/7</a>
+  </div>
+</body>
+</html>
