@@ -94,6 +94,13 @@
     footer{border-top:1px solid var(--border); padding:24px 0; background:#fff}
     .footgrid a{color:var(--text-900)}
     .copy{margin-top:14px; font-size:13px; color:var(--text-600)}
+
+    /* Dropdown submenu (Edukasi) */
+    .menu .dd{position:relative}
+    .menu .dd-menu{position:absolute; top:calc(100% + 8px); left:0; background:#fff; border:1px solid var(--border); border-radius:10px; padding:8px; display:none; min-width:220px; box-shadow:0 10px 20px rgba(0,0,0,.08)}
+    .menu .dd:hover .dd-menu, .menu .dd:focus-within .dd-menu{display:block}
+    .menu .dd-menu a{display:block; padding:8px 10px; color:var(--text-900); border-radius:8px; text-decoration:none}
+    .menu .dd-menu a:hover{background:var(--green-50)}
   </style>
 </head>
 <body>
@@ -106,13 +113,24 @@
         <div>Sehat Sejahtera Nusantara</div>
       </div>
       <nav class="menu" aria-label="Menu utama">
-        <a href="#">Beranda</a>
+        <a href="index.html">Beranda</a>
         <a href="katalog.html">Katalog Produk</a>
-        <a href="#">Jaringan</a>
-        <a href="#">Edukasi</a>
+        <a href="jaringan.html">Jaringan</a>
+        <span class="dd">
+          <a href="edukasi.html">Edukasi ▾</a>
+          <div class="dd-menu" role="menu" aria-label="Submenu Edukasi">
+            <a href="edukasi.html">Semua Artikel</a>
+            <a href="edukasi.html#kesehatan">Ilmu Kesehatan</a>
+            <a href="edukasi.html#penyakit">Penyakit</a>
+            <a href="edukasi.html#keseharian">Keseharian</a>
+            <a href="edukasi.html#finansial">Finansial</a>
+            <a href="edukasi.html#ulasan">Ulasan</a>
+            <a href="edukasi.html#promosi">Promosi</a>
+          </div>
+        </span>
         <a href="#">Media Sosial</a>
         <a href="#">Tentang SSN</a>
-        <a href="#">Kontak</a>
+        <a href="kontak.html">Kontak</a>
       </nav>
       <div>
         <a class="btn btn-primary" href="#">Belanja Produk</a>
